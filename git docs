@@ -1,0 +1,19 @@
+git init
+
+git add .
+
+git config --global user.email "user_email"
+
+git commit -m "first commit"
+
+git remote add origin git@github.com:syedbilal2112/internship.git
+
+git remote set-url origin https://github.com/syedbilal2112/internship.git
+
+git push -f origin master
+
+git status
+
+git pull
+
+git clone https://github.com/syedbilal2112/internship.git
