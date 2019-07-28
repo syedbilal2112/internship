@@ -53,9 +53,10 @@
 					password:password
 				},
 				success:function(res){
-					if(res=="success"){
+					if(res.includes("success")){
 						alert("successful login")
-						location.href="index.php"
+						location.href="index.php";
+						localStorage.setItem("adminEmail",email);
 					}else{
 						alert("login failed")
 					}

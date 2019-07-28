@@ -7,13 +7,13 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <script type="text/javascript">
-        var adminId = localStorage.getItem("adminId");
+        var adminEmail = localStorage.getItem("adminEmail");
         // alert(id)
-        if(!adminId){
-            window.location.replace("../login.php");
+        if(!adminEmail){
+            window.location.replace("login.php?message=UnauthorisedUser");
         }
-        function logout(argument) {
+        function logout() {
             localStorage.clear();
-            window.location.replace("../login.php");
+            window.location.replace("login.php?message=VisitAgain");
         }
     </script>

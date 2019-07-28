@@ -45,11 +45,12 @@
                         $.each(obj,function(index,value){
                             table_content+="<tr>";
                             table_content+="<td>"+value.id+"</td>";
+                            table_content+="<td><img src='"+value.student_profile_pic+"' style='width:150px;height:150px;border-radius:50%;'></td>";
                             table_content+="<td>"+value.student_name+"</td>";
                             table_content+="<td>"+value.student_email+"</td>";
                             table_content+="<td>"+value.student_address+"</td>";
                             table_content+="<td>"+value.student_branch+"</td>";
-  table_content+="<td><a class='btn btn-primary' href='studentEdit.php?useremail=<?php echo $email;?>&email="+value.student_email+"&id="+value.id+"'>Edit</a><button class='btn btn-danger' onclick='dele("+value.id+")'>Delete</button><button class='btn btn-info' onclick='studentView("+value.id+")'>View</button></td>";
+  table_content+="<td><a class='btn btn-primary' href='studentEdit.php?id="+value.id+"'>Edit</a><button class='btn btn-danger' onclick='dele("+value.id+")'>Delete</button><button class='btn btn-info' onclick='studentView("+value.id+")'>View</button></td>";
                             table_content+="</tr>";
                         });
                         $("#Table").append(table_content);
