@@ -2,7 +2,7 @@
 
 	include 'conn.php';
 
-	$query="SELECT * FROM `users`";
+	$query="SELECT * FROM `students`";
 	$result=mysqli_query($con,$query);
 	$json_data=array();
 	while($row=mysqli_fetch_assoc($result)){

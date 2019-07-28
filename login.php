@@ -27,7 +27,7 @@
 		</div>
 	<?php }
 	?>
-	<form action="verify.php" method="post">
+	<form>
 		<div class="form-group">
 			<label for="email" >email</label>
 			<input type="email" class="form-control" name="email" id="email" placeholder="Enter your Email">
@@ -36,9 +36,37 @@
 			<label for="Password" >Password</label>
 			<input type="password" class="form-control" name="password" id="password" placeholder="Enter your Password">
 		</div>
-		<input type="submit" name="submit" class="btn btn-primary" value="Register">
+		<input type="button" id="btn" name="submit" class="btn btn-primary" value="Register">
 	</form>
 </div>
+
+<script type="text/javascript">
+	$(function(){
+		$('#btn').click(function(){
+			var email = $('#email').val();
+			var password = $('#password').val();
+			$.ajax({
+				url:'verify.php',
+				type:'post',
+				data:{
+					email:email,
+					password:password
+				},
+				success:function(res){
+					if(res=="success"){
+						alert("successful login")
+						location.href="index.php"
+					}else{
+						alert("login failed")
+					}
+				},
+				error:function(){
+					alert("login failer")
+				}
+			})
+		})
+	})
+</script>
 
 </body>
 </html>

@@ -10,11 +10,13 @@
    	$db_password=$row[0];
    	if(password_verify($password, $db_password)){
    		$_SESSION[$email]=$email; 
-   		header("location: index.php?email=$email");
+   		// header("location: index.php?email=$email");
+         echo "success";
    	}
    else{
    	$message="password or email address incorrect";
-   		header("location: login.php?message=$message");
+   		// header("location: login.php?message=$message");
+      echo "failed";
    }
    	
    	
